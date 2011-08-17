@@ -11,10 +11,16 @@ TODO: make a service which hooks to haibu-server events and update the config re
 config.js should be self-explanatory.
 
 
+Install
+-------
+
+# npm install haibu-nginx -g
+
+
 Usage
 -----
 
-$ node haibu-nginx.js
+$ haibu-nginx config.js
 
 Then include the generated haibu-upstream.conf in your nginx config. 
 

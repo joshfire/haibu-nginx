@@ -9,6 +9,7 @@ config.output_dir = "/etc/nginx/"
 config.output_file_upstream = "haibu-upstream.conf";
 config.output_file_reverseproxy = "haibu-reverseproxy.conf";
 
-
+// List of IPs to transform to 127.0.0.1 automatically
+config.map_to_localhost = [];
 
 exports.config = config;

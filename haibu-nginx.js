@@ -1,9 +1,20 @@
-var config = require("./config.js").config;
+#!/usr/bin/env node
+
 
 var request = require('request'),
+    argv = require('optimist').argv,
     _ = require("underscore")._,
     fs = require("fs"),
     path = require("path");
+
+if (!argv._.length) {
+  console.error("Usage: haibu-nginx path/to/config.js");
+  process.exit(1);
+}
+
+// First argument is the path to the configuration file, relative or absolute.
+var config = require((argv._[0].charAt(0)=="/"?"":"./")+argv._[0]).config;
+
 
 console.log('Querying http://'+config.address+':'+config.port);
 
