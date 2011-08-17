@@ -13,7 +13,7 @@ if (!argv._.length) {
 }
 
 // First argument is the path to the configuration file, relative or absolute.
-var config = require((argv._[0].charAt(0)=="/"?"":"./")+argv._[0]).config;
+var config = require(path.resolve(process.cwd(),argv._[0])).config;
 
 
 console.log('Querying http://'+config.address+':'+config.port);
@@ -33,7 +33,7 @@ request('http://'+config.address+':'+config.port+'/drones', function (error, res
       nginx_upstream_conf+="upstream haibu-"+id+" {\n";
       
       _.each(app.drones,function(drone) {
-        nginx_upstream_conf+="  server "+drone.host+":"+drone.port+";\n";
+        nginx_upstream_conf+="  server "+(_.include(config.map_to_localhost,drone.host)?"127.0.0.1":drone.host)+":"+drone.port+";\n";
       });
       nginx_upstream_conf+="}\n\n";
       
