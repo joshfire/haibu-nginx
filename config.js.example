@@ -1,0 +1,14 @@
+var config = {};
+
+// Location of the haibu-server API instance
+config.address = "127.0.0.1";
+config.port = 9002;
+
+// Output files
+config.output_dir = "/etc/nginx/"
+config.output_file_upstream = "haibu-upstream.conf";
+config.output_file_reverseproxy = "haibu-reverseproxy.conf";
+
+
+
+exports.config = config;

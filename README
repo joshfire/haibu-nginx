@@ -1,0 +1,22 @@
+nginx configuration generator for haibu
+---------------------------------------
+
+If haibu-balancer doesn't cut it for you, you may want to use a powerful reverse proxy like nginx.
+
+This module will read a haibu status (often at http://127.0.0.1:9002/drones) and create a nginx-upstream.conf
+file that you can use in your existing nginx configuration.
+
+TODO: make a service which hooks to haibu-server events and update the config real-time. (w/ hook.io it seems)
+
+config.js should be self-explanatory.
+
+
+Usage
+-----
+
+$ node haibu-nginx.js
+
+Then include the generated haibu-upstream.conf in your nginx config. 
+
+You may also want to include haibu-reverseproxy.conf if your config is very simple but I expect 
+people to want to use their own custom settings for the server {} section (caches, ...) 

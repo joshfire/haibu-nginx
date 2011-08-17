@@ -1,0 +1,14 @@
+{
+  "name": "haibu-nginx",
+  "description": "nginx configuration generator for haibu",
+  "author": "Sylvain Zimmer @ Joshfire",
+  "version": "0.0.1",
+  "dependencies": {
+    "request":">= 2.1.0",
+    "underscore":">=1.1.0"
+  },
+  "scripts":{
+    "start": "haibu-nginx.js"
+  },
+  "engine": "node = 0.4.x"
+}
