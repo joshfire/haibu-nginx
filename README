@@ -27,6 +27,9 @@ Then include the generated haibu-upstream.conf in your nginx config.
 You may also want to include haibu-reverseproxy.conf if your config is very simple but I expect 
 people to want to use their own custom settings for the server {} section (caches, ...) 
 
+If you want haibu-reverseproxy.conf to work you have to include a "domain" key in your package.json
+file just like you would if you used haibu-balancer.
+
 
 Websockets?
 -----------
