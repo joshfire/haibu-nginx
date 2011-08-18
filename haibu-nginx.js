@@ -38,8 +38,8 @@ request('http://'+config.address+':'+config.port+'/drones', function (error, res
       nginx_upstream_conf+="}\n\n";
       
       nginx_reverseproxy_conf+="server {\n"
+                              +"  server_name "+app.app.domain+";\n\n"
                               +"  location / {\n"
-                              +"    server_name "+app.app.domain+";\n"
                               +"    proxy_pass http://haibu-"+id+";\n"
                               +"  }\n"
                               +"}\n\n";
@@ -48,7 +48,7 @@ request('http://'+config.address+':'+config.port+'/drones', function (error, res
     
     fs.writeFile(path.join(config.output_dir,config.output_file_upstream), nginx_upstream_conf, function(err) {
       if (err) {
-        console.error("Couldn't write upstream conf:",error);
+        console.error("Couldn't write upstream conf:",err);
       } else {
         console.log("Wrote "+path.join(config.output_dir,config.output_file_upstream))
       }
@@ -56,13 +56,13 @@ request('http://'+config.address+':'+config.port+'/drones', function (error, res
     
     fs.writeFile(path.join(config.output_dir,config.output_file_reverseproxy), nginx_reverseproxy_conf, function(err) {
       if (err) {
-        console.error("Couldn't write reverseproxy conf:",error);
+        console.error("Couldn't write reverseproxy conf:",err);
       } else {
         console.log("Wrote "+path.join(config.output_dir,config.output_file_reverseproxy));
       }
     });
     
   } else {
-    console.error("Couldn't connect to haibu-server:",error);
+    console.error("Couldn't connect to haibu-server:",err);
   }
 });
