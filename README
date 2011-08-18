@@ -26,3 +26,10 @@ Then include the generated haibu-upstream.conf in your nginx config.
 
 You may also want to include haibu-reverseproxy.conf if your config is very simple but I expect 
 people to want to use their own custom settings for the server {} section (caches, ...) 
+
+
+Websockets?
+-----------
+
+If you need websocket support, you currently need a custom nginx build:
+http://www.letseehere.com/reverse-proxy-web-sockets
