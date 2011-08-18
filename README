@@ -1,5 +1,5 @@
-nginx configuration generator for haibu
----------------------------------------
+nginx configuration generator for haibu (https://github.com/nodejitsu/haibu)
+----------------------------------------------------------------------------
 
 If haibu-balancer doesn't cut it for you, you may want to use a powerful reverse proxy like nginx.
 
