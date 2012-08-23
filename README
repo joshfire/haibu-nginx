@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/joshfire/haibu-nginx.png)](http://travis-ci.org/joshfire/haibu-nginx)
 nginx configuration generator for haibu (https://github.com/nodejitsu/haibu)
 ----------------------------------------------------------------------------
 
